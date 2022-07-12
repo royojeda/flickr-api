@@ -1,10 +1,8 @@
-<%= link_to "/" do %>
-<h1>Flickr API</h1>
-<% end %>
+<h1><%= link_to "Flickr API", "/" %></h1>
 
 <%= form_with url: "/", method: :get do |form| %>
   <%= form.label :user_id, "User ID:" %>
-  <%= form.text_field :user_id, value: "196042883@N07" %>
+  <%= form.text_field :user_id, value: @user_id %>
   <%= form.submit "Search" %>
 <% end %>
 
