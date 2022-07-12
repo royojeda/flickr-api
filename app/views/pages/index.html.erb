@@ -1,11 +1,19 @@
+<%= link_to "/" do %>
 <h1>Flickr API</h1>
+<% end %>
 
 <%= form_with url: "/", method: :get do |form| %>
   <%= form.label :user_id, "User ID:" %>
-  <%= form.text_field :user_id %>
+  <%= form.text_field :user_id, value: "196042883@N07" %>
   <%= form.submit "Search" %>
 <% end %>
 
-<% if @photos %>
-  <%= @photos %>
-<% end %>
+<br>
+
+<div id="photos">
+  <% if @photos %>
+    <% @photos.each do |photo| %>
+      <%= image_tag "https://live.staticflickr.com/#{photo.server}/#{photo.id}_#{photo.secret}.jpg" %>
+    <% end %>
+  <% end %>
+</div>

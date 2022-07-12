@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+#photos {
+  column-count: 5;
+  column-gap: 4px;
+}
+
+#photos img {
+  width: 100% !important;
+  height: auto !important;
+}
